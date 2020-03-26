@@ -1,0 +1,38 @@
+<div class="card text-center">
+  <div class="card-header">
+    Post Details
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%=@post.title%></h5>
+    <p class="card-text"><%=@post.content%></p>
+    <% @post.comments.each do |comment| %>
+        <% if(comment.errors.any?) %>
+            <div class="alert alert-danger">
+            <ul>
+            <% comment.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+            </ul>
+            </div>
+        <% end %>
+    <%end%>
+
+    <%= form_with url: "/posts/#{@post.id}", local: true do |form| %>
+        <%= form.text_area :content, class:'form-control', placeholder: "Write your comment here....." %>
+        <%= form.submit type:'submit', class:'btn btn-primary btn-block'%>
+    <%end%>
+  </div>
+  <div class="card-footer text-muted">
+    <%=@post.updated_at.strftime("%d of %B, %Y")%>
+  </div>
+</div>
+<div class="container">
+<% @post.comments.each do |comment| %>
+<div class="card">
+    <div class="card-body">
+        <p class="card-text"><%=comment.content%></p>
+        <%=link_to("Delete", "/comments/#{comment.id}", method: :delete, class: "btn btn-danger")%>
+    </div>
+</div>
+<%end%>
+</div>

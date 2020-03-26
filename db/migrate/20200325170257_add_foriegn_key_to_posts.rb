@@ -1,5 +1,5 @@
 class AddForiegnKeyToPosts < ActiveRecord::Migration[6.0]
   def change
-    add_foreign_key :posts, :user
+    add_reference :posts, :user, foreign_key: true
   end
 end
