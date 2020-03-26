@@ -7483,3 +7483,128 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 43ms (Views: 38.6ms | ActiveRecord: 1.1ms | Allocations: 9975)
 
 
+Started POST "/posts/4" for 127.0.0.1 at 2020-03-26 19:43:21 +0200
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"db0pUDH6m1FNvuduOH2FlNNlDBUBzbQgOLdVCH5jQYaLv/dSacR9VIvOmGkWDU/gjWb/f5N51qdyL46SRpLQ7A==", "content"=>"test\r\n", "commit"=>"Save ", "id"=>"4"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/comments_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+  [1m[36mComment Create (7.3ms)[0m  [1m[32mINSERT INTO `comments` (`content`, `created_at`, `updated_at`, `post_id`) VALUES ('test\r\n', '2020-03-26 17:43:21.251891', '2020-03-26 17:43:21.251891', 4)[0m
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+  [1m[35m (40.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 4[0m
+  ↳ app/views/posts/show.html.erb:8
+  Rendered posts/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1528)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 99ms (Views: 35.8ms | ActiveRecord: 49.4ms | Allocations: 12575)
+
+
+Started POST "/posts/4" for 127.0.0.1 at 2020-03-26 19:43:27 +0200
+Processing by CommentsController#create as HTML
+  Parameters: {"authenticity_token"=>"H0J5k2lAuOww6vm2RVlbqRZ2TmC4ZtrLBIrU5uiA/WHhQKeRMX5e6faahrFrKZHdSHW9CirSuExOEg980HFsCw==", "content"=>"test1", "commit"=>"Save ", "id"=>"4"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/comments_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+  [1m[36mComment Create (12.7ms)[0m  [1m[32mINSERT INTO `comments` (`content`, `created_at`, `updated_at`, `post_id`) VALUES ('test1', '2020-03-26 17:43:27.159095', '2020-03-26 17:43:27.159095', 4)[0m
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+  [1m[35m (89.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:8:in `create'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 4[0m
+  ↳ app/views/posts/show.html.erb:8
+  Rendered posts/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1592)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 154ms (Views: 39.3ms | ActiveRecord: 103.8ms | Allocations: 12633)
+
+
+Started GET "/" for 127.0.0.1 at 2020-03-26 19:43:31 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY `posts`.`created_at` DESC[0m
+  ↳ app/views/posts/index.html.erb:3
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1425)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.6ms | Allocations: 9461)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-03-26 19:43:36 +0200
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1480)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.0ms | Allocations: 9542)
+
+
+Started GET "/" for 127.0.0.1 at 2020-03-26 19:43:44 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` ORDER BY `posts`.`created_at` DESC[0m
+  ↳ app/views/posts/index.html.erb:3
+  Rendered posts/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1422)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 50ms (Views: 48.3ms | ActiveRecord: 0.8ms | Allocations: 9474)
+
+
+Started GET "/posts/6/edit" for 127.0.0.1 at 2020-03-26 19:43:47 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"authenticity_token"=>"sRAlA3fVWKOw18JLRePhDmM4/DFVYLSdtnrjouSHXFpPEvsBL+u+pnanvUxrkyt6PTsPW8fU1hr84jg43HbNMA==", "id"=>"6"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 6 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:11:in `edit'
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 825)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 36.8ms | ActiveRecord: 0.5ms | Allocations: 9528)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-03-26 19:43:53 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"authenticity_token"=>"sRAlA3fVWKOw18JLRePhDmM4/DFVYLSdtnrjouSHXFpPEvsBL+u+pnanvUxrkyt6PTsPW8fU1hr84jg43HbNMA==", "id"=>"3"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:28:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 3[0m
+  ↳ app/views/posts/show.html.erb:8
+  Rendered posts/show.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1517)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 33.1ms | ActiveRecord: 1.1ms | Allocations: 9983)
+
+
+Started GET "/posts/2/edit" for 127.0.0.1 at 2020-03-26 19:43:56 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"authenticity_token"=>"sRAlA3fVWKOw18JLRePhDmM4/DFVYLSdtnrjouSHXFpPEvsBL+u+pnanvUxrkyt6PTsPW8fU1hr84jg43HbNMA==", "id"=>"2"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:11:in `edit'
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 493)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 0.6ms | Allocations: 9059)
+
+
+Started GET "/posts/4/edit" for 127.0.0.1 at 2020-03-26 19:44:00 +0200
+Processing by PostsController#edit as HTML
+  Parameters: {"authenticity_token"=>"sRAlA3fVWKOw18JLRePhDmM4/DFVYLSdtnrjouSHXFpPEvsBL+u+pnanvUxrkyt6PTsPW8fU1hr84jg43HbNMA==", "id"=>"4"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:11:in `edit'
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (Duration: 1.6ms | Allocations: 493)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 31.1ms | ActiveRecord: 0.8ms | Allocations: 9053)
+
+
+Started GET "/posts/4" for 127.0.0.1 at 2020-03-26 19:44:05 +0200
+Processing by PostsController#show as HTML
+  Parameters: {"authenticity_token"=>"sRAlA3fVWKOw18JLRePhDmM4/DFVYLSdtnrjouSHXFpPEvsBL+u+pnanvUxrkyt6PTsPW8fU1hr84jg43HbNMA==", "id"=>"4"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 4 LIMIT 1[0m
+  ↳ app/controllers/posts_controller.rb:28:in `show'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT `comments`.* FROM `comments` WHERE `comments`.`post_id` = 4[0m
+  ↳ app/views/posts/show.html.erb:8
+  Rendered posts/show.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1645)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 35.9ms | ActiveRecord: 1.1ms | Allocations: 10104)
+
+
